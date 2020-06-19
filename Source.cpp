@@ -262,9 +262,9 @@ public:
 		cout << endl;
 	}
 
-	List operator-()const //revers copy list
+	MyList operator-()const //revers copy list
 	{
-		List tmp;
+		MyList tmp;
 
 		for (Node* current = head; current->next != nullptr; current = current->next)
 		{
@@ -273,9 +273,9 @@ public:
 		return tmp;
 	}
 
-	List operator+(List& other) const //adds other list to this
+	MyList operator+(List& other) const //adds other list to this
 	{
-		List tmp(*this);
+		MyList tmp(*this);
 
 		Node* current = other.head;
 
@@ -285,9 +285,9 @@ public:
 		return tmp;
 	}
 
-	List operator*(List& other)const
+	MyList operator*(MyList& other)const
 	{
-		List tmp(*this);
+		MyList tmp(*this);
 		Node* current = tmp.head;
 		Node* current2 = other.head;
 		for (Node* current = head; current != nullptr; current = current->next)
@@ -303,7 +303,7 @@ public:
 		return tmp;
 	}
 
-	List operator=(const List& other)
+	MyList operator=(const MyList& other)
 	{
 		if (this == &other) return *this;
 		this->~MyList();
