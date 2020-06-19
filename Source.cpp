@@ -158,10 +158,22 @@ public:
 		Node* newElem = new Node;
 		newElem->value = value;
 
-		Node* current = head;
-		for (int i = 0; i < pos - 1; ++i)
+		if (pos <= size / 2)
 		{
-			current = current->next;
+			Node* current = head;
+			for (int i = 0; i < pos - 1; ++i)
+			{
+				current = current->next;
+			}
+		}
+
+		else
+		{
+			Node* current = tail;
+			for (int i = size-1; i < pos - 1; --i)
+			{
+				current = current->prev;
+			}
 		}
 
 		newElem->prev = current->prev;
@@ -188,10 +200,22 @@ public:
 			return;
 		}
 
-		Node* current = head;
-		for (int i = 0; i < pos - 1; ++i)
+		
+		if (pos <= size / 2) 
 		{
-			current = current->next;
+			Node* current = head;
+			for (int i = 0; i < pos - 1; ++i)
+			{
+				current = current->next;
+			}
+		}
+		else
+		{
+			Node* current = tail;
+			for (int i = size-1; i < pos - 1; --i)
+			{
+				current = current->prev;
+			}
 		}
 
 		current->prev->next = current->next;
