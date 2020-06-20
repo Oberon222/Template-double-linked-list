@@ -170,7 +170,7 @@ public:
 		else
 		{
 			Node* current = tail;
-			for (int i = size-1; i < pos - 1; --i)
+			for (int i = size-1; i > pos - 1; --i)
 			{
 				current = current->prev;
 			}
@@ -212,7 +212,9 @@ public:
 		else
 		{
 			Node* current = tail;
-			for (int i = size-1; i < pos - 1; --i)
+
+
+			for (int i = size-1; i > pos-1; --i)
 			{
 				current = current->prev;
 			}
